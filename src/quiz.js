@@ -24,8 +24,13 @@ shuffleQuestions() {
         [this.questions[i], this.questions[j]] = [this.questions[j], this.questions[i]];
     }
 }
-checkAnswer() {
-    
-}
-
-}
+checkAnswer(answer) {
+    const currentQuestion = this.questions[this.currentQuestionIndex];
+    if (answer === currentQuestion.answer) {
+      this.correctAnswers += 1;
+    }
+  }
+  hasEnded() {
+    return this.currentQuestionIndex === this.questions.length;
+  }
+  };
